@@ -1,0 +1,300 @@
+{
+  "partitions": {
+    "u_tile0": [
+      {
+        "port_name": "a",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_a0",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_a", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "b",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_b0",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_b", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "op",
+        "direction": "in",
+        "width": 2,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "op0",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_op", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "inter_in",
+        "direction": "in",
+        "width": 9,
+        "active": "No",
+        "type": "init",
+        "connecting_wire": "9'h0",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "NULL",
+        "with_whom_is_it_communicating": []
+      },
+      {
+        "port_name": "inter_out",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link1",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_out", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile1", "port": "inter_in", "mpi_process": "u_tile1", "mpi_rank": 2}]
+      },
+      {
+        "port_name": "y",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "out0",
+        "mpi_process": "u_tile0",
+        "mpi_rank": 1,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_y", "mpi_process": "system", "mpi_rank": 0}]
+      }
+    ],
+    "u_tile1": [
+      {
+        "port_name": "a",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_a1",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_a", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "b",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_b1",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_b", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "op",
+        "direction": "in",
+        "width": 2,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "op1",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_op", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "inter_in",
+        "direction": "in",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link1",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_in", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile0", "port": "inter_out", "mpi_process": "u_tile0", "mpi_rank": 1}]
+      },
+      {
+        "port_name": "inter_out",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link2",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_out", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile2", "port": "inter_in", "mpi_process": "u_tile2", "mpi_rank": 3}]
+      },
+      {
+        "port_name": "y",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "out1",
+        "mpi_process": "u_tile1",
+        "mpi_rank": 2,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_y", "mpi_process": "system", "mpi_rank": 0}]
+      }
+    ],
+    "u_tile2": [
+      {
+        "port_name": "a",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_a2",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_a", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "b",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_b2",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_b", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "op",
+        "direction": "in",
+        "width": 2,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "op2",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_op", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "inter_in",
+        "direction": "in",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link2",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_in", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile1", "port": "inter_out", "mpi_process": "u_tile1", "mpi_rank": 2}]
+      },
+      {
+        "port_name": "inter_out",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link3",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_out", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile3", "port": "inter_in", "mpi_process": "u_tile3", "mpi_rank": 4}]
+      },
+      {
+        "port_name": "y",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "out2",
+        "mpi_process": "u_tile2",
+        "mpi_rank": 3,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_y", "mpi_process": "system", "mpi_rank": 0}]
+      }
+    ],
+    "u_tile3": [
+      {
+        "port_name": "a",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_a3",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_a", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "b",
+        "direction": "in",
+        "width": 8,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "in_b3",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_b", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "op",
+        "direction": "in",
+        "width": 2,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "op3",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_op", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "inter_in",
+        "direction": "in",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link3",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "broadcast",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_in", "mpi_process": "system", "mpi_rank": 0}, {"instance": "u_tile2", "port": "inter_out", "mpi_process": "u_tile2", "mpi_rank": 3}]
+      },
+      {
+        "port_name": "inter_out",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "inter_link4",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "cmp_top", "port": "logic_inter_out", "mpi_process": "system", "mpi_rank": 0}]
+      },
+      {
+        "port_name": "y",
+        "direction": "out",
+        "width": 9,
+        "active": "Yes",
+        "type": "wire",
+        "connecting_wire": "out3",
+        "mpi_process": "u_tile3",
+        "mpi_rank": 4,
+        "Comm": "P2P",
+        "with_whom_is_it_communicating": [{"instance": "system", "port": "logic_y", "mpi_process": "system", "mpi_rank": 0}]
+      }
+    ]
+  }
+}
