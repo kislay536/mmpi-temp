@@ -1,9 +1,12 @@
-VERILATOR_BIN_DIR ?= ../verilator-private/verilator-install/bin
+VERILATOR_BIN_DIR ?= ../../verilator-private/verilator-install/bin
 TOP_MODULE ?= cmp_top
 RTL_SOURCES := rtl/tile.sv rtl/cmp_top.sv
 CPP_SOURCES := sim_main.cpp
 
 export PATH := $(abspath $(VERILATOR_BIN_DIR)):$(PATH)
+
+version:
+	@verilator --version
 
 .PHONY: all build run build-mmpi run-mmpi inspect-mmpi clean
 
